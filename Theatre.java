@@ -1,4 +1,4 @@
-class Theatre2 {
+class Theatre {
 	
 static long priceOfKannadaMovies[] = {1000,150,150,200, 90000L};
 static int priceOfHindiMovies[] = {1000,100,100,150};
