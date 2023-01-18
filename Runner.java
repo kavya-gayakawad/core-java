@@ -1,24 +1,17 @@
-package com.xworkz.interfac.boot;
+package com.xworkz.terrorist.boot;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import com.xworkz.interfac.Chrome;
-import com.xworkz.interfac.FireBox;
-import com.xworkz.interfac.configuration.Configurations;
+import com.xworkz.terrorist.dto.TerroristDTO;
+import com.xworkz.terrorist.service.TerroristServiceImp;
 
 public class Runner {
 
 	public static void main(String[] args) {
+		TerroristDTO dto = new TerroristDTO("madhu", 65,"female",false,false,"Bombing","thaliban");
+		
+		TerroristServiceImp impl = new TerroristServiceImp();
+		impl.validateAndSave(dto);
+		System.out.println(dto.getName());
 
-		ApplicationContext container = new AnnotationConfigApplicationContext(Configurations.class);
-		
-		Chrome ch = container.getBean(Chrome.class);
-		
-		ch.browse();
-		
-		FireBox fb = container.getBean(FireBox.class);
-		fb.browse();
 	}
 
 }
