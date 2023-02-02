@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>X-workz</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
  rel="stylesheet" 
@@ -24,9 +24,10 @@
     alt="" width="80" height="48" class="d-inline-block align-text-top">
     </a>
     <a href="fooditem.jsp">Food Item</a>
+    <a href="Interview.jsp">Interview</a>
     </div>
     </nav>
-    <h1>This is spring with boot strap</h1>
+    <h1>This is spring with boot strap...</h1>
 
 
 </body>
