@@ -27,6 +27,7 @@
 				alt="" width="85" height="50" class="d-inline-block align text-top">
 			</a> <a href="bridge">Bridge</a>
 			<a href="BridgeSearch.jsp">BridgeSearch</a>
+			<a href="NameSearch.jsp">NameSearch.jsp</a>
 			
 		</div>
 	</nav>

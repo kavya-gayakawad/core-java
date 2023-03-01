@@ -1,6 +1,8 @@
 package com.xworkz.bridge.service;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 
 import javax.validation.ConstraintViolation;
@@ -73,6 +75,37 @@ public class BridgeServiceImpl implements BridgeService {
 		}
 		}
 		return BridgeService.super.findById(id);
+		
+	}
+		public List<BridgeDTO> findByName(String name){
+		System.out.println("running findByName in service " + name);
+		
+		if(name!= null && !name.isEmpty()) {
+			System.out.println("Name is valid ...calling repo...");
+			List<BridgeEntity> entities=this.bridgeRepository.findByName(name);
+			
+			List<BridgeDTO> listOfDto = new ArrayList<BridgeDTO>();
+			for(BridgeEntity entity:entities) {
+				BridgeDTO dto = new BridgeDTO();
+				dto.setId      (entity.getId());
+				dto.setName    (entity.getName());
+				dto.setCost    (entity.getCost());
+				dto.setLocation(entity.getLocation());
+				dto.setType    (entity.getType());
+				dto.setNoOfWorkers(entity.getNoOfWorkers());
+				listOfDto.add(dto);
+			}
+			
+			System.out.println("size of dtos " +listOfDto.size());
+			System.out.println("size of entities " + entities.size());
+			return listOfDto;
+			
+		}else {
+			System.out.println("Name is invalid");
+		}
+		
+		return BridgeService.super.findByName(name);
+		}
 }
 
-}
+

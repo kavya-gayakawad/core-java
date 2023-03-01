@@ -69,6 +69,17 @@ public class BridgeController {
 		System.out.println("Violations in controller");
 		return "Bridge";
 	}
+	@GetMapping("/searchbyname")
+	public String onSearchByName(@RequestParam String name, Model model) {
+		
+		System.out.println("running onSearchByName controller " +name);
+		List<BridgeDTO> list=this.bridgeService.findByName(name);
+		model.addAttribute("list", list);
+		
+		return "NameSearch";
+	}
+	
+	
 	
 	
 

@@ -40,11 +40,11 @@
 	<form action="bridge" method="post">
 	<pre>
 	
-	Name<input type="text" name="name" value="${dto.name}"/>
-	Cost<input type="text" name="cost" value="${dto.cost}"/>
+	Name    <input type="text" name="name" value="${dto.name}"/>
+	Cost    <input type="text" name="cost" value="${dto.cost}"/>
 	NoOfWorkers<input type="text" name="noOfWorkers" value="${dto.noOfWorkers}"/>
 	
-	Types<select name="type">
+	Types   <select name="type">
 	<option value="">Select</option>
 	<c:forEach items="${types}" var="t">
 	<option value="${t}">${t}</option>

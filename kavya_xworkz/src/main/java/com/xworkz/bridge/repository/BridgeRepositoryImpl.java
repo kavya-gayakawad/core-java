@@ -1,9 +1,11 @@
 package com.xworkz.bridge.repository;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
-
+import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -44,7 +46,24 @@ public class BridgeRepositoryImpl implements BridgeRepository {
 	manager.close();
 	
 	return bridgeEntity; 
+	}
+	@Override 
+	public List<BridgeEntity> findByName(String name) {
+    EntityManager manager=this.entityManagerFactory.createEntityManager();
+		 try {
+			 Query query = manager.createNamedQuery("findByName");
+			 query.setParameter("nam", name);
+			 List<BridgeEntity>list = query.getResultList();
+			 System.out.println("Total List found in repo " + list.size());
+			 return list;
+		 }finally {
+			 manager.close();
+		 }
+		 
+		
+		
+	}
 	
 
 }
-}
+

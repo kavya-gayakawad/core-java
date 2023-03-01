@@ -4,6 +4,7 @@ package com.xworkz.bridge.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -11,6 +12,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name="bridge_table")
+@NamedQuery(name="findByName", query= "select ent from BridgeEntity ent where ent.name=:nam")
 public class BridgeEntity {
 	
 	@Id
@@ -28,3 +30,4 @@ public class BridgeEntity {
 	private int noOfWorkers;
 
 }
+

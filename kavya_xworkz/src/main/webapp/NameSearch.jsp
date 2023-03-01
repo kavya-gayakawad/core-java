@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     
 <!DOCTYPE html>
 <html>
@@ -25,32 +25,49 @@
 		<div class="container-fluid">
 		
 			<a class="navbar-brand" href="#"> <img
-				src=" C:\Users\91821\Downloads\photo-1429041966141-44d228a42775.jpeg
-"
+				src=" C:\Users\91821\Downloads\photo-1429041966141-44d228a42775.jpeg"
+
 				alt="" width="85" height="50" class="d-inline-block align text-top">
 			</a> <a href="index.jsp">Home</a>
 		</div>
 	</nav>
-	<h2>Welcome to Bridge Search</h2>
+	<h2>Welcome to Bridge Name Search</h2>
 	
 	<h3>
 	<span style="color: red;">${message}</span>
 	</h3>
 	
-	<form action="bridgeSearch" method="get">
+	<form action="searchbyname" method="get">
 	<pre>
-	Search by Id<input type="text" name="id" value="${dto.id}"/>
+	Search by Name<input type="text" name="name"/>
 	<input type="submit" value="Search" class="btn btn-secondary"/>
 	</pre>
 	</form>
-	
 	<div>
+	
+	<table border="1">
+	<tr>
+	<th>ID</th>
+	<th>Name</th>
+	<th>Type</th>
+	<th>Cost</th>
+	<th>Location</th>
+	<th>NoOfWorkers</th>
+	</tr>
+	
+	<c:forEach items="${list}" var="t">
+	<tr>
 	<h3>Search Results...</h3>
-	Name:   ${dto.name}</br>
-	Cost:   ${dto.cost}</br>
-	Type:   ${dto.type}</br>
-	Location:${dto.location}</br>
-	NoOfWorkers:${dto.noOfWorkers}</br>
+	<td>${t.id}</td>
+	<td>   ${t.name}</td>
+	<td>     ${t.cost}</td>
+	<td>  ${t.type}</td>
+	<td>  ${t.location}</td>
+	<td>    ${t.noOfWorkers}</td>
+	</tr>
+    </c:forEach>
+	
+	</table>
 	</div>
 	
 	
@@ -58,6 +75,8 @@
 	
 	
 	
+
+
 
 
 </body>

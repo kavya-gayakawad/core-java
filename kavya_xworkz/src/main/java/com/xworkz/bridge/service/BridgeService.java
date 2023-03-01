@@ -1,13 +1,12 @@
 package com.xworkz.bridge.service;
 
+import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 
 import javax.validation.ConstraintViolation;
 
-import org.springframework.stereotype.Service;
-
 import com.xworkz.bridge.dto.BridgeDTO;
-
 
 public interface BridgeService {
 	
@@ -17,6 +16,9 @@ public interface BridgeService {
 	return null;
 	
 }
+	default List <BridgeDTO>findByName(String name) {
+		return Collections.emptyList();
+		}
 
 }
 
